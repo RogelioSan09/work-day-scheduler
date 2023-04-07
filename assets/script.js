@@ -8,7 +8,6 @@ $(function () {
   saveButton.on('click', function(){
     var userEvents = $('.description');
     console.log(userEvents);
-    userEvents.text(userEvents);
     userEvents.append(userEvents);
     localStorage.setItem(".description", userEvents);
   });
@@ -17,7 +16,7 @@ $(function () {
   renderEvents();
   
   function renderEvents(){
-    localStorage.getItem(".description");
+    var userEvents = localStorage.getItem(userEvents);
   }
 
   /*Displays the current date*/
