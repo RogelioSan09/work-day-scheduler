@@ -2,19 +2,22 @@ $(function () {
   /*Declared variables for save button and assigned them to the id within the html.*/
   var saveButton = $('.saveBtn');
   console.log(saveButton);
-  var userEvents = $('#user-input');
-  console.log(userEvents);
+  
 
   /*Event listener for saving users events in local storage upon user clicking the save button.*/
-  saveButton.on('click', '.saveBtn', function(){
-    localStorage.setItem("user-input", userEvents);
+  saveButton.on('click', function(){
+    var userEvents = $('.description');
+    console.log(userEvents);
+    userEvents.text(userEvents);
+    userEvents.append(userEvents);
+    localStorage.setItem(".description", userEvents);
   });
 
   /*Retrieve stored events from local storage*/
   renderEvents();
   
   function renderEvents(){
-    localStorage.getItem("user-input");
+    localStorage.getItem(".description");
   }
 
   /*Displays the current date*/
