@@ -5,17 +5,28 @@ $(function () {
 
   function timeSequence(){
     var currentTime = dayjs().format('H');
-    console.log(currentTime);
-    for (var i = 0; i < 8; i++){
+    console.log("Current time: " + currentTime);
+    for (var i = 0; i < 9; i++){
       var timeBlock = 9 + i;
-      console.log(timeBlock);
+      console.log("Time-block is " + timeBlock);
       if (currentTime > timeBlock){
-        $('#hour').children().addClass("past");
-      }
-      if (currentTime < timeBlock){
-        $('#hour').children().addClass("future");
+        console.log(currentTime + ' > ' + timeBlock);
+        for(var j = 0; j < 8; j++){
+            console.log(j);
+            $('textarea').addClass("past");
+        }
+      } if (currentTime < timeBlock){
+        console.log(currentTime + ' < ' + timeBlock);
+        for(var j = 0; j < 8; j++){
+            console.log(j);
+            $('textarea').addClass("future");
+        }
       } else{
-        $('#hour').children().addClass("present");
+            console.log(currentTime + ' == ' + timeBlock);
+            for(var j = 0; j < 8; j++){
+                console.log(j);
+                $('textarea').addClass("present");
+            }
       }
     }
   }
