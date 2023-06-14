@@ -1,12 +1,12 @@
 $(function () {
   /*Declared variables for save button and assigned them to the class within the html.*/
   var saveButton = $('.saveBtn');
-  var saveEvents = $('#user-input');
+  var saveEvents = $('#userInput').val($(this).data('textarea'));
   console.log(saveEvents);
   
   /*Event listener for saving users events in local storage upon user clicking the save button.*/
-  saveButton.on('click', function(){
-    localStorage.setItem('userEvents', saveEvents);
+  saveButton.on('click', function(){ 
+    localStorage.setItem('userEvents', JSON.stringify(saveEvents));
     console.log(saveEvents);
   });
 
@@ -46,7 +46,7 @@ $(function () {
   /*Retrieve stored events from local storage*/
 
   window.addEventListener ('load', function (){
-    $('#user-input') = localStorage.getItem('userEvents');
+    saveEvents = JSON.parse(localStorage.getItem('userEvents'));
   });
 
   /*Displays the current date*/
