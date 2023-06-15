@@ -31,6 +31,7 @@ $(function () {
     $('.description').val(userEvents);
   } else {
     $('.description').val('');
+
   }
 
   /*Displays the current date*/
